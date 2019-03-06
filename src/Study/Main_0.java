@@ -13,7 +13,7 @@ public class Main_0 {
     }
 
     public static int maxScore(int[] scores, int start, int end){
-        if(start == end)
+        if(start >= end)
             return 0;
         return Math.max(scores[start], maxScore(scores, start+1, end));
     }
