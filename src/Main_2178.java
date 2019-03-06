@@ -1,3 +1,7 @@
+/*
+송지은_백준 알고리즘 2178번
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;

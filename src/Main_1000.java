@@ -1,3 +1,7 @@
+/*
+송지은_백준 알고리즘 1000번
+*/
+
 import java.util.Scanner;
 
 public class Main_1000 {
