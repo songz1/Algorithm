@@ -17,6 +17,6 @@ public class Main_1000 {
         a = ab.nextInt();
         b = ab.nextInt();
 
-        System.out.println(a+b);
+        System.out.println(a + b);
     }
 }

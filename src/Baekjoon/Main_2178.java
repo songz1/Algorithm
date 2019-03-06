@@ -19,7 +19,7 @@ public class Main_2178 {
     public static class Pair {
         int x, y;
 
-        public Pair(int x, int y){
+        public Pair(int x, int y) {
             this.x = x;
             this.y = y;
         }
@@ -44,7 +44,7 @@ public class Main_2178 {
 
         check[0][0] = 1;
         BFS(0, 0);
-        System.out.println(check[n-1][m-1]);
+        System.out.println(check[n - 1][m - 1]);
     }
 
     public static void BFS(int x, int y) {
@@ -53,14 +53,14 @@ public class Main_2178 {
         q.offer(new Pair(x, y));
         visit[x][y] = true;
 
-        while (!q.isEmpty()){
+        while (!q.isEmpty()) {
             Pair p = q.poll();
-            for(int i=0; i<4; i++){
+            for (int i = 0; i < 4; i++) {
                 int nx = dx[i] + p.x;
                 int ny = dy[i] + p.y;
 
-                if(nx>=0 && nx<n && ny>=0 && ny<m){
-                    if(map[nx][ny] == 1 && visit[nx][ny] == false){
+                if (nx >= 0 && nx < n && ny >= 0 && ny < m) {
+                    if (map[nx][ny] == 1 && visit[nx][ny] == false) {
                         q.offer(new Pair(nx, ny));
                         visit[nx][ny] = true;
                         check[nx][ny] = Math.min(check[nx][ny], check[p.x][p.y] + 1);
