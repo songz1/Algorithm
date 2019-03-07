@@ -12,7 +12,7 @@ public class Main_4 {
         root.printAll(root);
     }
 
-    public static class Node {
+    static class Node {
         int value;
         Node next;
 
