@@ -7,7 +7,7 @@ package Study;
 public class Main_4 {
     public static void main(String[] args) {
         Node root = null;
-        for (int i = 1; i <= 10; ++i)
+        for (int i = 1; i <= 10; i++)
             root = new Node(i, root);
         root.printAll(root);
     }

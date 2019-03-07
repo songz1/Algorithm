@@ -8,7 +8,7 @@ public class Main_5 {
     public static void main(String[] args) {
         Node root = new Node(0, null);
         Node tail = root;
-        for (int i = 1; i <= 10; ++i) {
+        for (int i = 1; i <= 10; i++) {
             tail.addTail(i);
             tail = tail.next;
         }
