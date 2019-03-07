@@ -1,10 +1,10 @@
 /*
-송지은_insert(반복문)
+송지은_insert(재귀)
 */
 
 package Study;
 
-public class Main_6 {
+public class Main_6_1 {
     public static void main(String[] args) {
         int[] a = new int[10];
         for (int i = 0; i < a.length; i++) a[i] = i;
@@ -17,7 +17,8 @@ public class Main_6 {
     }
 
     static void insert(int[] a, int index, int value) {
-        for (int i = a.length-1; i > index; i--) a[i] = a[i - 1];
+        if (index >= a.length) return;
+        insert(a, index + 1, a[index]);
         a[index] = value;
     }
 }

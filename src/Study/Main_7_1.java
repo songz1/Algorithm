@@ -1,10 +1,10 @@
 /*
-송지은_remove(반복문)
+송지은_remove(재귀)
 */
 
 package Study;
 
-public class Main_7 {
+public class Main_7_1 {
     public static void main(String[] args) {
         int[] a = new int[10];
         for (int i = 0; i < a.length; ++i) a[i] = i;
@@ -17,7 +17,11 @@ public class Main_7 {
     }
 
     static void remove(int[] a, int index) {
-        for(int i=index; i<a.length-1; i++) a[i] = a[i+1];
-        a[a.length-1] = 0;
+        if (index >= a.length - 1) {
+            a[index] = 0;
+            return;
+        }
+        a[index] = a[index + 1];
+        remove(a, index + 1);
     }
 }
