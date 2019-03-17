@@ -14,6 +14,15 @@ public class Main_15 {
     }
 
     static void insertionSort(int[] a) {
-        
+        for (int i = 1; i < a.length; i++) {
+            int value = a[i];
+            int j;
+            for (j = i - 1; j >= 0; j--) {
+                if (value < a[j]) {
+                    a[i] = a[j];
+                } else break;
+            }
+            a[j + 1] = value;
+        }
     }
 }
