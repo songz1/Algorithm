@@ -2,7 +2,7 @@
 송지은_선택 정렬(selection sort)_findMin01
 */
 
-package Study;
+package Study_03_1;
 
 public class Main_13_2_1 {
     public static void main(String[] args) {

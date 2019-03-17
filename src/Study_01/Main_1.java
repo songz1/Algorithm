@@ -2,7 +2,7 @@
 송지은_factorial(재귀)
 */
 
-package Study;
+package Study_01;
 
 import java.util.Scanner;
 

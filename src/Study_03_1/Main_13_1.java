@@ -2,7 +2,7 @@
 송지은_선택 정렬(selection sort)_swap
 */
 
-package Study;
+package Study_03_1;
 
 import java.util.Arrays;
 

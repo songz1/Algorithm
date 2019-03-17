@@ -2,7 +2,7 @@
 송지은_1부터 n까지의 합(재귀)
 */
 
-package Study;
+package Study_01;
 
 public class Main_3 {
     public static void main(String[] args) {

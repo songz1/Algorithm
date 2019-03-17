@@ -2,7 +2,7 @@
 송지은_트리 탐색
 */
 
-package Study;
+package Study_01;
 
 import java.util.ArrayList;
 import java.util.List;

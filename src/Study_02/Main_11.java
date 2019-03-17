@@ -2,7 +2,7 @@
 송지은_2차 배열 출력(재귀)
 */
 
-package Study;
+package Study_02;
 
 public class Main_11 {
     public static void main(String[] args) {

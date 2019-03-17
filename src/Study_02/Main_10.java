@@ -2,7 +2,7 @@
 송지은_이진 트리
 */
 
-package Study;
+package Study_02;
 
 import java.util.Random;
 

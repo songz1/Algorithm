@@ -2,7 +2,7 @@
 송지은_배열 선형 탐색, 배열 이진 탐색, 배열 이진 탐색(재귀)
 */
 
-package Study;
+package Study_02;
 
 import java.util.Arrays;
 import java.util.Random;

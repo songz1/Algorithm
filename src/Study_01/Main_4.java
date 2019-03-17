@@ -2,7 +2,7 @@
 송지은_10 9 8 7 6 5 4 3 2 1 출력(재귀)
 */
 
-package Study;
+package Study_01;
 
 public class Main_4 {
     public static void main(String[] args) {

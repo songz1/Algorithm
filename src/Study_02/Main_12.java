@@ -1,12 +1,12 @@
 /*
-송지은_N번째 행에 별 N개 출력(재귀) - 오른쪽 정렬
+송지은_N번째 행에 별 N개 출력(재귀) - 왼쪽 정렬
 */
 
-package Study;
+package Study_02;
 
 import java.util.Scanner;
 
-public class Main_12_1 {
+public class Main_12 {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("행 수를 입력하시오: ");
@@ -18,25 +18,23 @@ public class Main_12_1 {
     }
 
     static void print1(int n) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (j >= (n - i - 1)) System.out.print("*");
-                else System.out.print(" ");
-            }
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j <= i; ++j) System.out.print("*");
             System.out.println();
         }
     }
 
     static void print2(int n, int i, int j) {
-        if (i >= n) return;
-        if (j < n) {
-            if (j >= (n - i - 1)) System.out.print("*");
-            else System.out.print(" ");
-            print2(n, i, ++j);
-        } else {
+        if(i >= n) return;
+        if(j > i) {
             System.out.println();
             print2(n, ++i, 0);
         }
+        else {
+            System.out.print("*");
+            print2(n, i, ++j);
+        }
     }
 }
+
 

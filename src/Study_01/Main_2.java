@@ -2,7 +2,7 @@
 송지은_배열 출력하기(재귀)
 */
 
-package Study;
+package Study_01;
 
 public class Main_2 {
     public static void main(String[] args) {

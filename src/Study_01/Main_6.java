@@ -2,7 +2,7 @@
 송지은_insert(반복문)
 */
 
-package Study;
+package Study_01;
 
 public class Main_6 {
     public static void main(String[] args) {

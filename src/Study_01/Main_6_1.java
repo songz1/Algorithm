@@ -2,7 +2,7 @@
 송지은_insert(재귀)
 */
 
-package Study;
+package Study_01;
 
 public class Main_6_1 {
     public static void main(String[] args) {

@@ -2,7 +2,7 @@
 송지은_최대값 찾기(재귀)
 */
 
-package Study;
+package Study_01;
 
 public class Main_0 {
     public static void main(String[] args) {

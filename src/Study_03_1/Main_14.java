@@ -2,7 +2,7 @@
 송지은_버블 정렬(bubble sort)
 */
 
-package Study;
+package Study_03_1;
 
 import java.util.Arrays;
 

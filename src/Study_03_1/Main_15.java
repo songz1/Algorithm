@@ -2,7 +2,7 @@
 송지은_삽입 정렬(insertion sort)
 */
 
-package Study;
+package Study_03_1;
 
 import java.util.Arrays;
 
