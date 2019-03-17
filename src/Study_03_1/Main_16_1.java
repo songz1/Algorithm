@@ -10,17 +10,17 @@ package Study_03_1;
 import java.util.Arrays;
 
 public class Main_16_1 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         int[] arr = {0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1};
         int[] count = new int[2];
 
-        for(int i=0; i<arr.length; i++)
+        for (int i = 0; i < arr.length; i++)
             ++count[arr[i]];
 
-        int index=0;
-        for(int i=0; i<count.length; i++)
-            if(count[i] != 0)
-                for(int j=0; j<count[i]; j++)
+        int index = 0;
+        for (int i = 0; i < count.length; i++)
+            if (count[i] != 0)
+                for (int j = 0; j < count[i]; j++)
                     arr[index++] = i;
 
         System.out.println(Arrays.toString(arr));
