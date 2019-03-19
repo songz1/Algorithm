@@ -27,13 +27,13 @@ public class Main_19 {
         int pivot = end;  // 기준값
         int i = start - 1;  // i는 1구역의 끝지점
 
-        for (int j = start; j < end - 1; j++)  // j는 3구역의 시작 지점
+        for (int j = start; j < end; j++)  // j는 3구역의 시작 지점
             if (a[j] < a[pivot])  // a[j] 값이 1구역에 속하면
                 swap(a, ++i, j);  // a[j] 값을 1구역의 끝에 추가한다. 1구역 크기 1증가.
 
         swap(a, i + 1, pivot);  // 기준값인 a[end] 원소와 2구역의 시작 원소를 교환한다.
 
-        return pivot;  // 기준값 위치 리턴
+        return i + 1;  // 기준값 위치 리턴
     }
 
     static void quickSort(int[] a, int start, int end) {
