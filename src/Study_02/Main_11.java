@@ -6,10 +6,12 @@ package Study_02;
 
 public class Main_11 {
     public static void main(String[] args) {
-        int[][] a = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[][] a = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 0, 1}};
         print1(a);
         System.out.println();
         print2(a, 0, 0);
+        System.out.println();
+        print3(a, 0, 0);
     }
 
     static void print1(int[][] a) {
@@ -27,6 +29,17 @@ public class Main_11 {
         } else {
             System.out.print(a[i][j] + " ");
             print2(a, i, ++j);
+        }
+    }
+
+    static void print3(int[][] a, int i, int j) {
+        if (i >= a.length) return;
+        System.out.printf("%d ", a[i][j]);
+        if (j < a[i].length - 1)
+            print3(a, i, j + 1);
+        else {
+            System.out.println();
+            print3(a, i + 1, 0);
         }
     }
 }
