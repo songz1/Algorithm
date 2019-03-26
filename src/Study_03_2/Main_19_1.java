@@ -1,5 +1,5 @@
 /*
-송지은_퀵 정렬(quick sort)
+송지은_퀵 정렬(quick sort)_후미 값 기준
 */
 
 package Study_03_2;
@@ -7,7 +7,7 @@ package Study_03_2;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Main_19 {
+public class Main_19_1 {
     public static void main(String[] args) {
         Random random = new Random();
         int[] a = new int[10];
