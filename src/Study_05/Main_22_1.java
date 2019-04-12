@@ -53,9 +53,9 @@ public class Main_22_1 {
 
         public void remove(int value, Node parent) {
             if (value < this.value) {
-                if(left != null) remove(value, this);
+                if(left != null) left.remove(value, this);
             } else if (value > this.value) {
-                if(right != null) remove(value, this);
+                if(right != null) right.remove(value, this);
             } else {
                 // 자식이 없는 경우 (지워도 무방한 코드)
                 if(left == null && right == null){
