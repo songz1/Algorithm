@@ -4,17 +4,24 @@
 
 package Baekjoon;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main_11004_selectionSort {
-	public static void main(String args[]) {
-		Scanner input = new Scanner(System.in);
-		int n = input.nextInt();
-		int k = input.nextInt();
+	public static void main(String args[]) throws IOException {
+		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(input.readLine());
+
+		int n = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
 
 		int[] a = new int[n];
+
+		st = new StringTokenizer(input.readLine());
 		for (int i = 0; i < n; i++) {
-			a[i] = input.nextInt();
+			a[i] = Integer.parseInt(st.nextToken());
 		}
 
 		System.out.println(selection(a, 0, a.length - 1, k));
