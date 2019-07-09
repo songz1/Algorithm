@@ -20,9 +20,9 @@ public class Main_1158 {
 			list.add(i);
 		}
 
-		int index=0;
+		int index = 0;
 		while (list.size() > 0) {
-			index= (index+k-1)%list.size();
+			index = (index + k - 1) % list.size();
 			result.add(list.get(index));
 			list.remove(index);
 		}
