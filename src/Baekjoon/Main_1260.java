@@ -4,78 +4,66 @@
 
 package Baekjoon;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
 public class Main_1260 {
-    static boolean visit[];
-    static boolean visit2[];
-    static int[][] a;
-    static int n;
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		int m = input.nextInt();
+		int v = input.nextInt();
 
-    public static void main(String[] args) {
-        // write your code here
+		int x, y;
+		int[][] graph = new int[n][n];
+		boolean[] visited = new boolean[n];
 
-        Scanner input = new Scanner(System.in);
-        n = input.nextInt();
-        int m = input.nextInt();
-        int v = input.nextInt();
+		for (int i = 0; i < m; i++) {
+			x = input.nextInt();
+			y = input.nextInt();
 
-        a = new int[n + 1][n + 1];
-        visit = new boolean[n + 1];
-        visit2 = new boolean[n + 1];
+			graph[x - 1][y - 1] = 1;
+			graph[y - 1][x - 1] = 1;
+		}
 
-        for (int i = 0; i < m; i++) {
-            int n1 = input.nextInt();
-            int n2 = input.nextInt();
+		DFS(v - 1, graph, visited);
+		System.out.println();
 
-            a[n1][n2] = 1;
-            a[n2][n1] = 1;
-        }
+		Arrays.fill(visited, false);
+		BFS(v - 1, graph, visited);
+	}
 
-        // DFS
-        for (int j = 1; j < n + 1; j++) {
-            if (a[v][j] == 1 && !visit[v]) {
-                System.out.print(v + " ");
-                visit[v] = true;
-                DFS(v, j);
-            }
-        }
+	public static void DFS(int i, int[][] graph, boolean[] visited) {
+		System.out.print((i + 1) + " ");
+		visited[i] = true;
 
-        System.out.println();
-        // BFS
-        BFS(v);
-    }
+		for (int k = 0; k < graph.length; k++) {
+			if (graph[i][k] != 0 && !visited[k]) {
+				DFS(k, graph, visited);
+			}
+		}
+	}
 
-    public static void DFS(int i, int j) {
-        visit[j] = true;
+	public static void BFS(int i, int[][] graph, boolean[] visited) {
+		Queue<Integer> queue = new LinkedList<>();
+		queue.offer(i);
+		visited[i] = true;
+		System.out.print((i + 1) + " ");
 
-        System.out.print(j + " ");
-        for (int k = 1; k < n + 1; k++) {
-            if (a[j][k] == 1 && !visit[k]) {
-                DFS(j, k);
-            }
-        }
-    }
+		int temp;
+		while (!queue.isEmpty()) {
+			temp = queue.poll();
 
-    public static void BFS(int i) {
-        Queue<Integer> q = new <Integer>LinkedList();
-
-        q.offer(i);
-        visit2[i] = true;
-
-        while (!q.isEmpty()) {
-            int temp = q.poll();
-            System.out.print(temp + " ");
-
-            for (int j = 1; j < n + 1; j++) {
-                if (a[temp][j] == 1 && !visit2[j]) {
-                    q.offer(j);
-                    visit2[j] = true;
-                }
-            }
-        }
-    }
+			for (int j = 0; j < graph.length; j++) {
+				if (graph[temp][j] != 0 && !visited[j]) {
+					queue.offer(j);
+					visited[j] = true;
+					System.out.print((j + 1) + " ");
+				}
+			}
+		}
+	}
 }
 
