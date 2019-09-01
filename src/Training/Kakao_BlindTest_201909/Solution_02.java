@@ -10,7 +10,8 @@ public class Solution_02 {
 		for (int temp : result) {
 			System.out.print(temp + " ");
 		}
-
+		System.out.println();
+		
 		result = solution(4, new int[]{4, 4, 4, 4, 4});
 		for (int temp : result) {
 			System.out.print(temp + " ");
