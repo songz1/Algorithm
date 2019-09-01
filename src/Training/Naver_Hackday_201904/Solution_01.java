@@ -2,9 +2,9 @@
 송지은_네이버 핵데이 코딩테스트_1번(완료)
 */
 
-package Training;
+package Training.Naver_Hackday_201904;
 
-public class NaverHackday_201904_01 {
+public class Solution_01 {
     public static void main(String[] args) {
         int[] A = {1, 6, 2, 3, 6};
         System.out.println(solution(A));
