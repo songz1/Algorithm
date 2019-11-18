@@ -4,39 +4,77 @@
 
 package Baekjoon;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Stack;
 
 public class Main_2504_X {
-	public static void main(String args[]) {
-		Scanner input = new Scanner(System.in);
-		String str = input.nextLine();
+	public static void main(String args[]) throws Exception {
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		String t = bufferedReader.readLine();
 
-		parenthesis(str);
+		int tempInt;
+		String tempStr;
+		Stack<String> stack = new Stack();
+		int count = 0;
 
-	}
-
-	static int parenthesis(String str) {
-		int[] open_count = new int[2];
-		int score = 0;
-		int tempScore = 0;
-
-		for (int i = 0; i < str.length(); i++) {
-			if (str.charAt(i) == '(') {
-				open_count[0]++;
-
-			} else if (str.charAt(i) == '[') {
-				open_count[1]++;
-			} else if (str.charAt(i) == ')') {
-				if (open_count[0] == 0) {
-					return 0;
-				} else if (open_count[0] > 1 || open_count[1] > 1) {
-					tempScore += 2;
-					open_count[0]--;
-
-				}
+		for (int i = 0; i < t.length(); i++) {
+			switch (t.substring(count, ++count)) {
+				case "(":
+					stack.push("(");
+					break;
+				case ")":
+					tempStr = stack.pop();
+					if (tempStr == "(") {
+						stack.push("2");
+					} else if (tempStr == ")" || tempStr == "]" || tempStr == "["){
+						System.out.print(0);
+						return;
+					}
+					else{
+						tempInt = Integer.parseInt(tempStr) * 2;
+						stack.pop();
+						if (!stack.isEmpty() && stack.peek() != "(" && stack.peek() != "[") {
+							tempInt = tempInt + Integer.parseInt(stack.pop());
+						}
+						stack.push(Integer.toString(tempInt));
+					}
+					break;
+				case "[":
+					stack.push("[");
+					break;
+				case "]":
+					tempStr = stack.pop();
+					if (tempStr == "[") {
+						stack.push("3");
+					} else if (tempStr == ")" || tempStr == "]" || tempStr == "("){
+						System.out.print(0);
+						return;
+					} else {
+						tempInt = Integer.parseInt(tempStr) * 3;
+						stack.pop();
+						if (!stack.isEmpty() && stack.peek() != "(" && stack.peek() != "[") {
+							tempInt = tempInt + Integer.parseInt(stack.pop());
+						}
+						stack.push(Integer.toString(tempInt));
+					}
+					break;
+				default:
+					break;
 			}
 		}
-		return 0;
-	}
 
+		int result = 0;
+		String tempResult;
+		while (!stack.isEmpty()){
+			tempResult = stack.pop();
+			if(tempResult == "(" || tempResult == "[" || tempResult == ")" || tempResult == "]"){
+				System.out.print(0);
+				return;
+			}
+			result += Integer.parseInt(tempResult);
+		}
+
+		System.out.print(result);
+	}
 }
