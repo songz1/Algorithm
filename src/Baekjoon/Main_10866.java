@@ -8,12 +8,12 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_10866_X {
+public class Main_10866 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(bufferedReader.readLine());
 
-		Deque deque = new Deque(n);
+		Deque deque = new Deque();
 		for (int i = 0; i < n; i++) {
 			StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 			String order = stringTokenizer.nextToken();
@@ -47,59 +47,95 @@ public class Main_10866_X {
 		}
 	}
 
-	public static class Deque {
-		int[] arr;
-		int front = 1;
-		int back = 1;
-		int count = 0;
+	public static class DequeNode {
+		int data;
+		DequeNode rlink;
+		DequeNode llink;
 
-		public Deque(int size) {
-			arr = new int[size];
-
+		public DequeNode(int data) {
+			this.data = data;
+			this.rlink = null;
+			this.llink = null;
 		}
+	}
 
-		public boolean isFull() {
-			return arr.length == count;
+	public static class Deque {
+		DequeNode front;
+		DequeNode end;
+		int count;
+
+		public Deque() {
+			front = null;
+			end = null;
+			count = 0;
 		}
 
 		public void push_front(int x) {
-			if (isFull()) {
-				return;
+			DequeNode node = new DequeNode(x);
+
+			if (empty() == 1) {
+				front = node;
+				end = node;
+				node.rlink = null;
+				node.llink = null;
+			} else {
+				node.rlink = front;
+				node.llink = null;
+				front.llink = node;
+				front = node;
 			}
-			int frontIdx = (front - 1) % arr.length;
-			arr[frontIdx] = x;
-			front = frontIdx + 1;
 			count++;
 		}
 
 		public void push_back(int x) {
-			if (isFull()) {
-				return;
+			DequeNode node = new DequeNode(x);
+
+			if (empty() == 1) {
+				front = node;
+				end = node;
+				node.rlink = null;
+				node.llink = null;
+			} else {
+				node.rlink = null;
+				node.llink = end;
+				end.rlink = node;
+				end = node;
 			}
-			int backIdx = (back) % arr.length;
-			arr[backIdx] = x;
-			back = backIdx + 1;
 			count++;
 		}
 
 		public int pop_front() {
-			if (count == 0) {
+			if (empty() == 1) {
 				return -1;
+			} else {
+				int temp = front.data;
+				if (front.rlink == null) {
+					front = null;
+					end = null;
+				} else {
+					front = front.rlink;
+					front.llink = null;
+				}
+				count--;
+				return temp;
 			}
-			int temp = arr[front-1];
-			front = (front + 1) % arr.length;
-			count--;
-			return temp;
 		}
 
 		public int pop_back() {
-			if (count == 0) {
+			if (empty() == 1) {
 				return -1;
+			} else {
+				int temp = end.data;
+				if (end.llink == null) {
+					front = null;
+					end = null;
+				} else {
+					end = end.llink;
+					end.rlink = null;
+				}
+				count--;
+				return temp;
 			}
-			int temp = arr[back-1];
-			back = (back - 1) % arr.length;
-			count--;
-			return temp;
 		}
 
 		public int size() {
@@ -107,21 +143,23 @@ public class Main_10866_X {
 		}
 
 		public int empty() {
-			return count == 0 ? 1 : 0;
+			return (front == null ? 1 : 0);
 		}
 
 		public int front() {
-			if (count == 0) {
+			if (empty() == 1) {
 				return -1;
+			} else {
+				return front.data;
 			}
-			return arr[front];
 		}
 
 		public int back() {
-			if (count == 0) {
+			if (empty() == 1) {
 				return -1;
+			} else {
+				return end.data;
 			}
-			return arr[back];
 		}
 	}
 }
