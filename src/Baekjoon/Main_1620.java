@@ -36,6 +36,12 @@ public class Main_1620 {
 				num = Integer.parseInt(input);
 				check = true;
 			}
+			/*for (char ch : input.toCharArray()) {
+				if (Character.isDigit(ch) == true) {
+					check = true;
+					break;
+				}
+			}*/
 
 			if (check) {
 				System.out.println(poketmonIndex.get(num));
