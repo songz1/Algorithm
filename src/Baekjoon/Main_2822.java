@@ -1,5 +1,11 @@
 /*
 송지은_백준 알고리즘 2822번
+
+배열에 점수 받고 HashMap에 key:점수, value:인덱스 저장
+-> 점수 sort
+-> 높은 점수 5개 더하면서 result 배열에 HashMap으로 인덱스 불러와서 인덱스 저장
+-> result sort
+-> 출력
 */
 
 package Baekjoon;
