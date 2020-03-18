@@ -5,12 +5,15 @@
 package Baekjoon;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayDeque;
 
 public class Main_4949 {
 	public static void main(String args[]) throws Exception {
 		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		while (true) {
 			String str = input.readLine();
@@ -45,7 +48,10 @@ public class Main_4949 {
 				}
 			}
 
-			System.out.println(balance && deque.isEmpty() ? "yes" : "no");
+			bufferedWriter.write(balance && deque.isEmpty() ? "yes\n" : "no\n");
+			bufferedWriter.flush();
+//			System.out.println(balance && deque.isEmpty() ? "yes" : "no");
 		}
+		bufferedWriter.close();
 	}
 }
