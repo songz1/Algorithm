@@ -1,5 +1,8 @@
 /*
 송지은_백준 알고리즘 1780번
+
+check -> 1번 과정(전부 같은 숫자인지 확인)
+division -> 2번 과정(분할)
 */
 
 package Baekjoon;
