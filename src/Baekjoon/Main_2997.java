@@ -27,13 +27,10 @@ public class Main_2997 {
 
         if (a == b) {
             System.out.print(arr[2] + a);
-            return;
         } else if (a > b) {
             System.out.print(arr[0] + b);
-            return;
         } else {
             System.out.print(arr[1] + a);
-            return;
         }
     }
 }
